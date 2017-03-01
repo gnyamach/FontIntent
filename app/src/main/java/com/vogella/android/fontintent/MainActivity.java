@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         tv_display = (TextView)findViewById(R.id.tv_displaymain);
     }
 
@@ -44,22 +43,25 @@ public class MainActivity extends AppCompatActivity {
                 tv_display.setText(et_entry.getText().toString());
                 return true;
             case R.id.m_change_font:
-                Intent fontIntent = new Intent("msud.cs3013.ACTION_RETRIEVE_FONT");
-                fontIntent.addFlags(Intent.FLAG_DEBUG_LOG_RESOLUTION);
-                //fontIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                if (fontIntent != null) {
-                    requestCode = 404;
-                    Log.d(TAG, "Called the Intent application");
-                    startActivityForResult(fontIntent, requestCode);
-                }else{
-                    System.err.println(TAG + ": There is no activity found to handle Intent");
-                }
-
+                requestCode = 404;
+                callIntent(requestCode);
                 return true;
             default:break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void callIntent(int requestCode){
+        Intent fontIntent = new Intent("msud.cs3013.ACTION_RETRIEVE_FONT");
+        fontIntent.addFlags(Intent.FLAG_DEBUG_LOG_RESOLUTION);
+        if (fontIntent != null) {
+            Log.d(TAG, "Called the Intent application");
+            startActivityForResult(fontIntent, requestCode);
+        }else{
+            System.err.println(TAG + ": There is no activity found to handle Intent");
+        }
+
     }
 
     @Override
