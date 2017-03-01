@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/m_display_text"
+        android:icon="@mipmap/twitter"
+        android:orderInCategory="1"
+        android:title="DisplayText"
+        app:showAsAction="never"  />
+    <item
+        android:id="@+id/m_change_font"
+        android:orderInCategory="2"
+        android:title="Change Font"
+        app:showAsAction="never" />
+
+</menu>

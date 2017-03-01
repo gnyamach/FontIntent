@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    tools:context="com.vogella.android.fontintent.MainActivity"
+    android:weightSum="1">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint=""
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:id="@+id/et_inputmain" />
+
+    <TextView
+        android:id="@+id/tv_displaymain"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        android:text="Nothing entered" />
+
+    <ImageButton
+        android:layout_width="74dp"
+        android:layout_height="21dp"
+        android:layout_gravity="end"
+        app:srcCompat="@mipmap/twitter"
+        android:id="@+id/imageButton"
+        android:layout_weight="0.13" />
+</LinearLayout>
