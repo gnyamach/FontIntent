@@ -2,6 +2,7 @@ package com.vogella.android.fontintent;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.m_change_font:
                 requestCode = 404;
                 callIntent(requestCode);
+                setFont(tv_display);
+                //setSize(tv_display);
                 return true;
             default:break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -84,12 +86,24 @@ public class MainActivity extends AppCompatActivity {
                 colorB = data.getIntExtra("Color B",200);
                 Log.i(TAG, "Color value B: " + colorB);
             }
-            if (data.hasExtra("FontSize")) {
+            if (data.hasExtra("FontSize") && (data.getIntExtra("FontSize",25) != 2012)) {
                 setFontSize = data.getIntExtra("FontSize",25);
                 Log.i(TAG, "Font value : " + setFontSize);
             }
 
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void setFont(TextView tv) {
+        if (requestCode == 404){
+            tv.setTextColor(Color.argb(colorA, colorR, colorG, colorB ));
+        }
+    }
+
+    public void setSize(TextView tv){
+        if (setFontSize  != 2012){
+            tv.setTextSize(setFontSize);
+        }
     }
 }
