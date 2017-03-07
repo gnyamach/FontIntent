@@ -2,15 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/m_display_text"
+        android:id="@+id/m_buttons_change"
         android:icon="@mipmap/twitter"
         android:orderInCategory="1"
-        android:title="DisplayText"
+        android:title="Change Buttons"
         app:showAsAction="never"  />
     <item
         android:id="@+id/m_change_font"
+        android:icon="@mipmap/color_icon"
         android:orderInCategory="2"
-        android:title="Change Font"
+        android:title="ChooseFont/Color"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/m_changebackground"
+        android:orderInCategory="3"
+        android:title="Set Background Color"
         app:showAsAction="never" />
 
 </menu>

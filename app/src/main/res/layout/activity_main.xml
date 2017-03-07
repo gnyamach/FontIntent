@@ -10,7 +10,6 @@
     tools:context="com.vogella.android.fontintent.MainActivity"
     android:weightSum="1">
 
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,11 +29,70 @@
         android:textSize="20dp"
         android:text="Nothing entered" />
 
-    <ImageButton
-        android:layout_width="74dp"
-        android:layout_height="21dp"
-        android:layout_gravity="end"
-        app:srcCompat="@mipmap/twitter"
-        android:id="@+id/imageButton"
-        android:layout_weight="0.13" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_weight="0.02"
+        android:layout_marginBottom="60dp">
+        <Button
+            android:id="@+id/button_displayText"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:text="Display Text"
+            android:gravity="left"
+            android:layout_marginRight="50dp"
+            android:onClick="button_click" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click to set text font"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:layout_weight="0.5"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:layout_weight="0.5"
+            app:srcCompat="@mipmap/twitter"
+            android:id="@+id/imageButton"
+            android:onClick="imageBut_click" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button_urlClick"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:text="Display Content from URL"
+            android:layout_height="wrap_content"
+            android:onClick="buttonURLClick"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/tv_url"
+            android:hint="Android Text"/>
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+
+    </LinearLayout>
+
+
 </LinearLayout>
